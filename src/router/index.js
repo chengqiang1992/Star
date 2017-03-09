@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
+import Vuerouter from '@/components/vuerouter'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/user/:id',
       name: 'user',
       component: User
+    },
+    {
+      path: '/router',
+      name: 'Vuerouter',
+      component: Vuerouter
     }
   ]
 })
