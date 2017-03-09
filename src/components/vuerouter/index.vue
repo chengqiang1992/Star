@@ -3,6 +3,7 @@
     <HEADER></HEADER>
     <div>
       <Sidebar></Sidebar>
+      <router-view></router-view>
     </div>
   </div>
 </template>

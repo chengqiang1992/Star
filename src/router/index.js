@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Vuerouter from '@/components/vuerouter'
+import GettingStarted from '@/components/Vuerouter/Essentials/GettingStarted'
+import ComponentInjections from '@/components/Vuerouter/Api/ComponentInjections'
+
+ComponentInjections
 
 Vue.use(Router)
 
@@ -59,6 +63,16 @@ export default new Router({
       path: '/router',
       name: 'Vuerouter',
       component: Vuerouter
+    },
+    {
+      path: '/essentials/getting-started',
+      name: 'GettingStarted',
+      component: GettingStarted
+    },
+    {
+      path: '/api/component-injections',
+      name: 'ComponentInjections',
+      component: ComponentInjections
     }
   ]
 })

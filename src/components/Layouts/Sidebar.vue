@@ -1,49 +1,84 @@
 <template>
-  <div class="hello">
-    <h2><router-link :to="{ name: 'Vuerouter'}">vue-router 2</router-link></h2>
-    <ul>
-      <li><router-link to="/foo">Go to Foo</router-link></li>
-      <li><router-link to="/bar">Go to Bar</router-link></li>
-    </ul>
-    <ul>
-      <li>开始</li>
-      <li><router-link to="/user/foo">Go to User1</router-link></li>
-      <li><router-link to="/user/bar">Go to User2</router-link></li>
-    </ul>
-    <ul>
-      <li>动态路由匹配</li>
-      <li><router-link to="/user/1992">Go to User</router-link></li>
-      <li><router-link to="/user/1993">Go to User</router-link></li>
-    </ul>
-    <ul>
-      <li>嵌套路由</li>
-      <li><router-link to="/user/foo">/user/foo</router-link></li>
-      <li><router-link to="/user/foo/profile">/user/foo/profile</router-link></li>
-      <li><router-link to="/user/foo/posts">/user/foo/posts</router-link></li>
-    </ul>
-    <ul>
-      <li>命名路由</li>
-      <li><router-link :to="{ name: 'user', params: { id: 123 }}">User</router-link></li>
-      <li>router.push({ name: 'user', params: { userId: 123 }})</li>
-    </ul>
-    <ul>
-      <li>导航钩子</li>
-    </ul>
-    <ul>
-      <li>路由元信息</li>
-    </ul>
-    <ul>
-      <li>过渡动效</li>
-    </ul>
-    <ul>
-      <li>数据获取</li>
-    </ul>
-    <ul>
-      <li>滚动行为</li>
-    </ul>
-    <ul>
-      <li>懒加载</li>
-    </ul>
+  <div class="book-summary">
+    <nav role="navigation">
+      <ul class="summary">
+        <li class="chapter">
+          <a href="">介绍</a>
+        </li>
+        <li class="chapter">
+          <span>基础</span>
+          <ul class="articles">
+            <li class="chapter">
+              <router-link :to="{ name: 'GettingStarted'}">开始</router-link>
+            </li>
+            <li class="chapter">
+              <a href="">动态路由匹配</a>
+            </li>
+            <li class="chapter">
+              <a href="">嵌套路由</a>
+            </li>
+            <li class="chapter">
+              <a href="">编程式导航</a>
+            </li>
+            <li class="chapter">
+              <a href="">命名路由</a>
+            </li>
+            <li class="chapter">
+              <a href="">重定向和别名</a>
+            </li>
+            <li class="chapter">
+              <a href="">HTML History 模式</a>
+            </li>
+          </ul>
+        </li>
+        <li class="chapter">
+          <span>进阶</span>
+          <ul class="articles">
+            <li class="chapter">
+              <a href="">导航钩子</a>
+            </li>
+            <li class="chapter">
+              <a href="">路由元信息</a>
+            </li>
+            <li class="chapter">
+              <a href="">过渡动效</a>
+            </li>
+            <li class="chapter">
+              <a href="">数据获取</a>
+            </li>
+            <li class="chapter">
+              <a href="">滚动行为</a>
+            </li>
+            <li class="chapter">
+              <a href="">懒加载</a>
+            </li>
+          </ul>
+        </li>
+        <li class="chapter">
+          <span>API文档</span>
+          <ul class="articles">
+            <li class="chapter">
+              <a href="">router-link</a>
+            </li>
+            <li class="chapter">
+              <a href="">router-view</a>
+            </li>
+            <li class="chapter">
+              <a href="">路由信息对象</a>
+            </li>
+            <li class="chapter">
+              <a href="">Router 构造配置</a>
+            </li>
+            <li class="chapter">
+              <a href="">Router 实例</a>
+            </li>
+            <li class="chapter">
+              <router-link :to="{ name: 'ComponentInjections'}">对组件注入</router-link>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -60,14 +95,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="sass">
-h1, h2
-  font-weight: normal
+  .book-summary
+    position: absolute
+    top: 25rem
+    bottom: 0
+    z-index: 1
+    overflow-y: auto
+    width: 300px
+    ul.summary
+      text-align: left
+      li ul
+        padding-left: 2rem
+      li a,span
+        display: block
+        padding: 0.3rem 1.5rem
+      li span
+        color: #7f8c8d
+        opacity: 0.6
+        cursor: not-allowed
 
-ul
-  list-style-type: none
-  padding: 0
 
-li
-  display: inline-block
-  margin: 0 10px
 </style>
