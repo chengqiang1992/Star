@@ -1,7 +1,7 @@
 <template>
   <div>
     <HEADER></HEADER>
-    <div>
+    <div class="book">
       <Sidebar></Sidebar>
       <router-view></router-view>
     </div>

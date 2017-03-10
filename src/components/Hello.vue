@@ -31,6 +31,8 @@
       <li>动态路由匹配</li>
       <li><router-link to="/user/1992">Go to User</router-link></li>
       <li><router-link to="/user/1993">Go to User</router-link></li>
+      <li><router-link to="/user/evan">Go to User</router-link></li>
+      <li><router-link to="/user/evan/post/123">Go to User</router-link></li>
     </ul>
     <ul>
       <li>嵌套路由</li>

@@ -1,4 +1,54 @@
 // markdown
-.markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section strong,
-	font-weight: 600
-	color: #2c3e50
+
+.markdown-section
+	display: block
+	word-wrap: break-word
+	overflow: hidden
+	line-height: 1.7
+	> :first-child
+		margin-top: 0 !important
+
+	h1, h2, h3, h4, strong
+		font-weight: 600
+		color: #2c3e50
+	p, ul, ol
+		line-height: 1.6rem
+		word-spacing: 0.05rem
+		margin: 1.2rem 0
+
+	a
+		color: $green-vue
+		font-weight: 600
+
+	figure 
+		margin: 1.2rem 0
+
+	h1
+		margin: 0 0 1rem
+
+	ul, menu, dir
+		display: block
+		list-style-type: disc
+		-webkit-margin-before: 10px
+		-webkit-margin-after: 10px
+		-webkit-padding-start: 40px
+	pre
+		direction: ltr
+		border: none
+		color: inherit
+		overflow: auto
+		word-wrap: normal
+		background-color: $white-code-background
+		padding: 0 1.4rem
+		line-height: 1.5rem
+		margin: 0
+
+		code
+			font-size: 0.8rem
+			display: block
+			padding: 0
+			margin: -4rem 0
+			overflow: inherit
+			white-space: pre
+			background: 0 0
+

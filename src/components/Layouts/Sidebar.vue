@@ -12,7 +12,7 @@
               <router-link :to="{ name: 'GettingStarted'}">开始</router-link>
             </li>
             <li class="chapter">
-              <a href="">动态路由匹配</a>
+              <router-link :to="{ name: 'DynamicMatching'}">动态路由匹配</router-link>
             </li>
             <li class="chapter">
               <a href="">嵌套路由</a>
@@ -35,10 +35,10 @@
           <span>进阶</span>
           <ul class="articles">
             <li class="chapter">
-              <a href="">导航钩子</a>
+            <router-link :to="{ name: 'NavigationGuards'}">导航钩子</router-link>
             </li>
             <li class="chapter">
-              <a href="">路由元信息</a>
+              <router-link :to="{ name: 'Meta'}">路由元信息</router-link> 
             </li>
             <li class="chapter">
               <a href="">过渡动效</a>
@@ -67,10 +67,10 @@
               <a href="">路由信息对象</a>
             </li>
             <li class="chapter">
-              <a href="">Router 构造配置</a>
+              <router-link :to="{ name: 'Options'}">Router 构造配置</router-link>
             </li>
             <li class="chapter">
-              <a href="">Router 实例</a>
+              <router-link :to="{ name: 'RouterInstance'}">Router 实例</router-link>
             </li>
             <li class="chapter">
               <router-link :to="{ name: 'ComponentInjections'}">对组件注入</router-link>
