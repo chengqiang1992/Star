@@ -230,6 +230,7 @@
 </template>
 
 <script>
+// import http from '../../assets/js/http.js'
 export default {
   name: 'hello',
   data () {

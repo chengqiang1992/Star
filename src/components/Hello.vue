@@ -47,6 +47,8 @@
     </ul>
 
     <h2><router-link :to="{ name: 'vueresource'}">vue-resource</router-link></h2>
+
+    <h2><router-link :to="{ name: 'es6'}">Es 6</router-link></h2>
   </div>
 </template>
 
