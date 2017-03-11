@@ -20,6 +20,9 @@ import http from '@/components/vueresource/http'
 import resource from '@/components/vueresource/resource'
 import recipes from '@/components/vueresource/recipes'
 
+import es6 from '@/components/es6/index'
+import promise from '@/components/es6/promise'
+
 const Foo = {
   template: `
     <transition name="fade">
@@ -152,6 +155,16 @@ const routes = [
     path: '/recipes',
     name: 'recipes',
     component: recipes
+  },
+  {
+    path: '/es6',
+    name: 'es6',
+    component: es6
+  },
+  {
+    path: '/es6/promise',
+    name: 'promise',
+    component: promise
   }
 ]
 

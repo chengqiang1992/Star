@@ -1,8 +1,11 @@
 # star
 
 Star is one of my projects in order to increase the understanding of Vue 2.x
-> * Vue 2.x
-> * vue-router 2
+> * Vue v2.x
+> * Vue-cli
+> * vue-router v2.x
+> * vue-resource v1.2.1
+> * ES6 Promises and Asynchronous Programming
 
 
 ## Build Setup
