@@ -4,14 +4,21 @@ import VueRouter from 'vue-router'
 // 1. 定义（路由）组件。
 // 可以从其他 import 进来
 import Hello from '@/components/Hello'
-import Vuerouter from '@/components/vuerouter'
-import GettingStarted from '@/components/Vuerouter/Essentials/GettingStarted'
-import DynamicMatching from '@/components/Vuerouter/Essentials/DynamicMatching'
-import NavigationGuards from '@/components/Vuerouter/Advanced/NavigationGuards'
-import Meta from '@/components/Vuerouter/Advanced/Meta'
-import ComponentInjections from '@/components/Vuerouter/Api/ComponentInjections'
-import RouterInstance from '@/components/Vuerouter/Api/RouterInstance'
-import Options from '@/components/Vuerouter/Api/Options'
+
+import vuerouter from '@/components/vuerouter'
+import gettingstarted from '@/components/vuerouter/essentials/gettingstarted'
+import dynamicmatching from '@/components/vuerouter/essentials/dynamicmatching'
+import navigationguards from '@/components/vuerouter/advanced/navigationguards'
+import meta from '@/components/vuerouter/advanced/meta'
+import componentinjections from '@/components/vuerouter/api/componentinjections'
+import routerinstance from '@/components/vuerouter/api/routerinstance'
+import options from '@/components/vuerouter/api/options'
+
+import vueresource from '@/components/vueresource/index'
+import configuration from '@/components/vueresource/configuration'
+import http from '@/components/vueresource/http'
+import resource from '@/components/vueresource/resource'
+import recipes from '@/components/vueresource/recipes'
 
 const Foo = {
   template: `
@@ -79,8 +86,8 @@ const routes = [
   },
   {
     path: '/router',
-    name: 'Vuerouter',
-    component: Vuerouter,
+    name: 'vuerouter',
+    component: vuerouter,
     beforeEnter: (to, from, next) => {
       console.log('路由独享的钩子')
       next()
@@ -88,38 +95,63 @@ const routes = [
   },
   {
     path: '/essentials/getting-started',
-    name: 'GettingStarted',
-    component: GettingStarted
+    name: 'gettingstarted',
+    component: gettingstarted
   },
   {
     path: '/essentials/dynamic-matching',
-    name: 'DynamicMatching',
-    component: DynamicMatching
+    name: 'dynamicmatching',
+    component: dynamicmatching
   },
   {
     path: '/advanced/navigation-guards',
-    name: 'NavigationGuards',
-    component: NavigationGuards
+    name: 'navigationguards',
+    component: navigationguards
   },
   {
     path: '/advanced/meta',
-    name: 'Meta',
-    component: Meta
+    name: 'meta',
+    component: meta
   },
   {
     path: '/api/options',
-    name: 'Options',
-    component: Options
+    name: 'options',
+    component: options
   },
   {
     path: '/api/router-instance',
-    name: 'RouterInstance',
-    component: RouterInstance
+    name: 'routerinstance',
+    component: routerinstance
   },
   {
     path: '/api/component-injections',
-    name: 'ComponentInjections',
-    component: ComponentInjections
+    name: 'componentinjections',
+    component: componentinjections
+  },
+  {
+    path: '/vue-resource',
+    name: 'vueresource',
+    component: vueresource
+  },
+  {
+    path: '/configuration',
+    name: 'configuration',
+    component: configuration
+  },
+  {
+    path: '/http',
+    name: 'http',
+    component: http
+  },
+  {
+    path: '/resource',
+    name: 'resource',
+    component: resource
+  },
+  {
+    path: '/recipes',
+    name: 'recipes',
+    component: recipes
   }
 ]
 

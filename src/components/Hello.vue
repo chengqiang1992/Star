@@ -17,7 +17,7 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
-    <h2><router-link :to="{ name: 'Vuerouter'}">vue-router 2</router-link></h2>
+    <h2><router-link :to="{ name: 'vuerouter'}">vue-router 2</router-link></h2>
     <ul>
       <li><router-link to="/foo">Go to Foo</router-link></li>
       <li><router-link to="/bar">Go to Bar</router-link></li>
@@ -45,24 +45,8 @@
       <li><router-link :to="{ name: 'user', params: { id: 123 }}">User</router-link></li>
       <li>router.push({ name: 'user', params: { userId: 123 }})</li>
     </ul>
-    <ul>
-      <li>导航钩子</li>
-    </ul>
-    <ul>
-      <li>路由元信息</li>
-    </ul>
-    <ul>
-      <li>过渡动效</li>
-    </ul>
-    <ul>
-      <li>数据获取</li>
-    </ul>
-    <ul>
-      <li>滚动行为</li>
-    </ul>
-    <ul>
-      <li>懒加载</li>
-    </ul>
+
+    <h2><router-link :to="{ name: 'vueresource'}">vue-resource</router-link></h2>
   </div>
 </template>
 

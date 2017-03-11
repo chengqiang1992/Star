@@ -32,6 +32,26 @@ const router = new VueRouter({
             <p>例如，根据上面的路由配置，/foo/bar 这个 URL 将会匹配父路由记录以及子路由记录。</p>
             <P>一个路由匹配到的所有路由记录会暴露在 $route 对象（还有在导航钩子中的 route 对象）的 $route.matched数组。因此，我们需要遍历 $route.matched 来检查路由记录中的 meta 字段。</P>
             <p>下面例子展示在全局导航钩子中检查meta字段。</p>
+            <pre>
+              <code>
+                router.beforeEach((to, from, next) => {
+                  if (to.matched.some(record => record.meta.requiresAuth)) {
+                    // this route requires auth, check if logged in
+                    // if not, redirect to login page.
+                    if (!auth.loggedIn()) {
+                      next({
+                        path: '/login',
+                        query: { redirect: to.fullPath}
+                      })
+                    } else {
+                      next()
+                    }
+                  } else {
+                    next()  //确保一定要用next()
+                  }
+                })
+              </code>
+            </pre>
   				</section>
   			</div>
   		</div>
