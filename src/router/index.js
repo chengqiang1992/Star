@@ -5,6 +5,9 @@ import VueRouter from 'vue-router'
 // 可以从其他 import 进来
 import Hello from '@/components/Hello'
 
+import vue from '@/components/vue/index'
+import introduction from '@/components/vue/essentials/introduction'
+
 import vuerouter from '@/components/vuerouter'
 import gettingstarted from '@/components/vuerouter/essentials/gettingstarted'
 import dynamicmatching from '@/components/vuerouter/essentials/dynamicmatching'
@@ -86,6 +89,16 @@ const routes = [
     path: '/user/:id',
     name: 'user',
     component: User
+  },
+  {
+    path: '/vue/essentials',
+    name: 'introduction',
+    component: introduction
+  },
+  {
+    path: '/vue',
+    name: 'vue',
+    component: vue
   },
   {
     path: '/router',

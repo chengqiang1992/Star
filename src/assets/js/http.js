@@ -98,4 +98,6 @@ var p1 = new Promise(function (resolve, reject) {
 var p2 = new Promise(function (resolvem reject) {
 	setTimeout(() => resolve(p1), 1000)
 });
-p2.then(result => console.log(result)).catch(error => console.log(error))
+p2
+	.then(result => console.log(result))
+	.catch(error => console.log(error))

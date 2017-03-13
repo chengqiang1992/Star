@@ -46,6 +46,8 @@
       <li>router.push({ name: 'user', params: { userId: 123 }})</li>
     </ul>
 
+    <h2><router-link :to="{ name: 'vue'}">Vue 2.x</router-link></h2>
+
     <h2><router-link :to="{ name: 'vueresource'}">vue-resource</router-link></h2>
 
     <h2><router-link :to="{ name: 'es6'}">Es 6</router-link></h2>
