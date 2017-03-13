@@ -60,8 +60,90 @@
 		            </pre>
 
 		            <p>下面是一个简单的例子</p>
-		            <h2 id="3">1. Promise 的含义</h2>
-		            <h2 id="4">1. Promise 的含义</h2>
+		            <pre>
+		            	<code>
+	function timeout(ms) {
+		return new Promise((resolve, reject) => {
+			setTimeout(resolve, ms, 'done')
+		});
+	}
+	timeout(100).then((value) => {
+		console.log(value);
+	});
+		            	</code>
+		            </pre>
+		            <p>上面的代码中，timeout 方法返回一个Promise实例，表示一段时间以后才会发生的结果。过了指定的时间（ms参数）以后，Promise实例的状态变为 Resolved，就会出发 then 方法绑定回调函数。</p>
+
+		            <p>Promise 新建后就会立即执行。</p>
+		            <pre>
+		            	<code>
+	let promise = new Promise(function(resolve, reject) {
+		console.log('Promise');
+		resolve();
+	});
+	promise.then(function() {
+		console.log('Resolved');
+	});
+	console.log('Hi!')
+		            	</code>
+		            </pre>
+		            <pre>输出： Promise Hi! Resolved</pre>
+		            <p>上面代码中，Promise新建后立即执行。所以首先输出的是“promise”。然后，then方法指定的回调函数，将在当前脚本所有同步任务执行完才会执行，所以“Resolved”最后输出。</p>
+
+
+		            <p>下面是异步加载图片的例子。</p>
+		            <pre>
+		            	<code>
+	function loadImageAsync(url) {
+		return new Promise(function(resolve, reject) {
+			var image = new Image();
+			image.onload = function() {
+				resolve(image);
+			};
+			image.onerror = function() {
+				reject(new Error('Could not load image at ' + url));
+			};
+			image.src = url
+		});
+	}
+		            	</code>
+		            </pre>
+		            <p>上面的代码中，使用 Promise 包装了一个图片加载的异步操作。如果加载成功，就调用 resolve 方法，否则就调用 reject 方法。</p>
+
+
+		            <p>下面是一个使用 Promise 对象实现的Ajax操作的例子。</p>
+		            <pre>
+		            	<code>
+	var getJSON = function(url) {
+		var promise = new Promise(function(resolve, reject) {
+			var client = new XMLHttpRequest();
+			client.open("GET", url);
+			client.onreadystatechange = handler;
+			client.responseType = 'json';
+			client.setRequestHeader('Accept', 'application/json');
+			client.send();
+
+			function handler() {
+				if (this.readyStatus !== 4) {
+					return;
+				}
+				if (this.status === 200) {
+					resolve(this.response);
+				} else {
+					reject(new Error(this.statusText));
+				}
+			};
+		});
+		return promise;
+	};
+
+	getJSON('/posts.json').then(function(json) {
+		console.log('Contents: ' + json);
+	}, function(error) {
+		console.log('出错了', error)
+	});
+		            	</code>
+		            </pre>
   				</section>
   			</div>
   		</div>
