@@ -144,6 +144,38 @@
 	});
 		            	</code>
 		            </pre>
+		            <p>上面代码中，getJSON是对 XMLHttpRequest 对象的封装，用于发出一个针对JSON数据的HTPPP请求，并且返回一个Promise对象。需要注意的是，在getJSON内部，resolve函数和reject函数调用时，都带有函数。</p>
+
+		            <p>如果调用resolve函数和reject函数时带有参数，那么他们的参数会被传递给回调函数。reject函数的参数通常是Error对象的实例，表示抛出的错误；resolve函数的参数除了正常的值以外，还可能是另一个Promise实例，表示异步操作的结果有可能是一个值，也可能是另一个异步操作，比如像下面这样。</p>
+		            <pre>
+		            	<code>
+	var p1 = new Promise(function (resolve, reject) {
+		// ...
+	});
+
+	var p2 = new Promise(function (resolvem reject) {
+		// ...
+		resolve(p1);
+	});
+		            	</code>
+		            </pre>
+		            <p>上面代码中，p1和p2都是Promise的实例，但是p2的resolve方法将p1作为参数，即一个异步操作的结果是返回另一个异步操作。</p>
+
+		            <p>注意，这时p1的状态就会传递给p2，也就是说，p1的状态决定了p2的状态。如果p1的状态是Pending，那么p2的回调函数就会等待p1的状态改变；如果p1的状态已经是resolved或者rejected，那么p2的回调函数将会立即执行。</p>
+		            <pre>
+		            	<code>
+	var p1 = new Promise(function (resolve, reject) {
+		setTimeout(() => reject(new Error('fail')), 3000)
+	});
+
+	var p2 = new Promise(function (resolvem reject) {
+		setTimeout(() => resolve(p1), 1000)
+	});
+	p2
+		.then(result => console.log(result))
+		.catch(error => console.log(error))
+		            	</code>
+		            </pre>
   				</section>
   			</div>
   		</div>
