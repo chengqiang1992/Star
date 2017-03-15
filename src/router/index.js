@@ -7,6 +7,7 @@ import Hello from '@/components/Hello'
 
 import vue from '@/components/vue/index'
 import introduction from '@/components/vue/essentials/introduction'
+import components from '@/components/vue/essentials/components'
 
 import vuerouter from '@/components/vuerouter'
 import gettingstarted from '@/components/vuerouter/essentials/gettingstarted'
@@ -91,14 +92,19 @@ const routes = [
     component: User
   },
   {
-    path: '/vue/essentials',
+    path: '/vue',
+    name: 'vue',
+    component: vue
+  },
+  {
+    path: '/vue/essentials/introduction',
     name: 'introduction',
     component: introduction
   },
   {
-    path: '/vue',
-    name: 'vue',
-    component: vue
+    path: '/vue/essentials/components',
+    name: 'components',
+    component: components
   },
   {
     path: '/router',

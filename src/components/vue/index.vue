@@ -47,8 +47,9 @@
                     <a href="">Form Input Bindings</a>
                   </li>
                   <li class="chapter">
-                    <a href="">Components</a>
+                    <router-link :to="{ name: 'components'}">Components</router-link>
                   </li>
+                  
                 </ul>
               </li>
               <li class="chapter">
