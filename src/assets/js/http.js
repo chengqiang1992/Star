@@ -101,3 +101,14 @@ var p2 = new Promise(function (resolvem reject) {
 p2
 	.then(result => console.log(result))
 	.catch(error => console.log(error))
+
+
+new Vue({
+	el: "#some-element",
+	// options
+})
+
+Vue.component('my-component', {
+	// options
+})
+
