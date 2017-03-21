@@ -20,13 +20,13 @@
                     <router-link :to="{ name: 'introduction'}">Installation</router-link>
                   </li>
                   <li class="chapter">
-                    <router-link :to="{ name: 'DynamicMatching'}">Introduction</router-link>
+                    <router-link :to="{ name: 'introduction'}">Introduction</router-link>
                   </li>
                   <li class="chapter">
-                    <a href="">The Vue Instance</a>
+                    <router-link :to="{ name: 'thevueinstance'}">The Vue Instance</router-link>
                   </li>
                   <li class="chapter">
-                    <a href="">Template Syntax</a>
+                    <router-link :to="{ name: 'templatesyntax'}">Template Syntax</router-link>
                   </li>
                   <li class="chapter">
                     <a href="">Computed Properties and Watchers</a>

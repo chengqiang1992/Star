@@ -7,6 +7,8 @@ import Hello from '@/components/Hello'
 
 import vue from '@/components/vue/index'
 import introduction from '@/components/vue/essentials/introduction'
+import thevueinstance from '@/components/vue/essentials/thevueinstance'
+import templatesyntax from '@/components/vue/essentials/templatesyntax'
 import components from '@/components/vue/essentials/components'
 
 import vuerouter from '@/components/vuerouter'
@@ -100,6 +102,16 @@ const routes = [
     path: '/vue/essentials/introduction',
     name: 'introduction',
     component: introduction
+  },
+  {
+    path: '/vue/essentials/thevueinstance',
+    name: 'thevueinstance',
+    component: thevueinstance
+  },
+  {
+    path: '/vue/essentials/templatesyntax',
+    name: 'templatesyntax',
+    component: templatesyntax
   },
   {
     path: '/vue/essentials/components',
